@@ -18,9 +18,15 @@ class AlienInvasion:
 	def run_game(self):
 
 		while True:
+			self._check_events()
+			self._update_events()
+
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					sys.exit()
+				elif event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_RIGHT:
+						self.ship.rect.x += 1
 
 				#color bg
 				self.screen.fill(self.settings.bg_color)
