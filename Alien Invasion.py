@@ -1,21 +1,16 @@
 import sys
-
+from settings import Settings
 import pygame
 
 class AlienInvasion:
 
-
-
 	def __init__(self):
 
 		pygame.init()
+		self.settings = Settings()
 
-
-		self.screen = pygame.dispaly.set_mode((1200, 800))
+		self.screen = pygame.dispaly.set_mode((self.settings.screen_width, self.settings.screen_height))
 		pygame.dispaly.set_caption("Alien Invasion")
-
-		#color bg
-		self.bg_color = (280, 230, 230)
 
 	def run_game(self):
 
