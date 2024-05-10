@@ -1,5 +1,6 @@
 import sys
 from settings import Settings
+from ship import Ship
 import pygame
 
 class AlienInvasion:
@@ -12,6 +13,8 @@ class AlienInvasion:
 		self.screen = pygame.dispaly.set_mode((self.settings.screen_width, self.settings.screen_height))
 		pygame.dispaly.set_caption("Alien Invasion")
 
+		self.ship = Ship(self)
+
 	def run_game(self):
 
 		while True:
@@ -21,6 +24,7 @@ class AlienInvasion:
 
 				#color bg
 				self.screen.fill(self.settings.bg_color)
+				self.ship.blitme()
 
 			pygame.display.flip()
 
